@@ -20,5 +20,10 @@ public class CodeWheel : MonoBehaviour
             topPart.GetComponent<RectTransform>().Rotate(
                 new Vector3(0, 0, 1 * gradesToRotate * Time.deltaTime));
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            topPart.GetComponent<RectTransform>().Rotate(
+                new Vector3(0, 0, -1 * gradesToRotate * Time.deltaTime));
+        }
     }
 }
