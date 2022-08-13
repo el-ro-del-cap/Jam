@@ -19,11 +19,15 @@ public class PuzzleManager : MonoBehaviour
 
     public void PuzzleSolved()
     {
-        if (GameObject.Find("PuzzleEj").GetComponent<Puzzle>().isSolved)
+       // if (GameObject.Find("VaultPuzzle")) 
         {
-            codeWheel.downPartImages[0].enabled = true;
+            if (GameObject.Find("VaultPuzzle").GetComponent<VaultManager>().isSolved)
+            {
+                codeWheel.downPartImages[0].enabled = true;
+            }
         }
-        if (GameObject.Find("PuzzleEj (1)").GetComponent<Puzzle>().isSolved)
+        
+        /*if (GameObject.Find("PuzzleEj (1)").GetComponent<Puzzle>().isSolved)
         {
             codeWheel.downPartImages[1].enabled = true;
         }
@@ -34,6 +38,6 @@ public class PuzzleManager : MonoBehaviour
         if (GameObject.Find("PuzzleEj (3)").GetComponent<Puzzle>().isSolved)
         {
             codeWheel.downPartImages[3].enabled = true;
-        }
+        }*/
     }
 }
