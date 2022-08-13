@@ -11,7 +11,8 @@ public class CodeWheelController : MonoBehaviour
 
     private void Start()
     {
-
+        //Lo ponemos en la primer escena y lo dejamos ahí o lo ponemos en cada escena.
+        //DontDestroyOnLoad(this);?
     }
     // Update is called once per frame
     void Update()
@@ -27,5 +28,5 @@ public class CodeWheelController : MonoBehaviour
                 new Vector3(0, 0, -1 * gradesToRotate * Time.deltaTime));
         }
     }
-
+    
 }
