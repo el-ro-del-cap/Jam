@@ -374,12 +374,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9f99f53b4f64648aefe37d29b3d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OppositeButton: {fileID: 1761220810}
   parentPanel: {fileID: 1281777276}
   Paneloides:
   - {fileID: 1859053866}
   - {fileID: 697645284}
   - {fileID: 873644925}
   - {fileID: 1353483021}
+  currentPanel: {fileID: 0}
+  nextPanelLeft: {fileID: 0}
+  nextPanelRight: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,12 +1684,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9f99f53b4f64648aefe37d29b3d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OppositeButton: {fileID: 396902516}
   parentPanel: {fileID: 1281777276}
   Paneloides:
   - {fileID: 1859053866}
   - {fileID: 697645284}
   - {fileID: 873644925}
   - {fileID: 1353483021}
+  currentPanel: {fileID: 0}
+  nextPanelLeft: {fileID: 0}
+  nextPanelRight: {fileID: 0}
 --- !u!1 &1775997738
 GameObject:
   m_ObjectHideFlags: 0
