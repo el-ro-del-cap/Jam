@@ -24,16 +24,17 @@ public class PuzzleManager : MonoBehaviour
         {
             if (GameObject.Find("VaultPuzzle").GetComponent<VaultManager>().isSolved)
             {
-                codeWheel.downPartImages[0].enabled = true;
+                //codeWheel.downPartImages[0].enabled = true;
             }
         }
         if (GameObject.Find("ClockPuzzle"))
         {
             if (GameObject.Find("ClockPuzzle").GetComponent<ClockPuzzleManager>().isSolved)
             {
-                codeWheel.downPartImages[1].enabled = true;
+                //codeWheel.downPartImages[1].enabled = true;
             }
         }
         
+
     }
 }

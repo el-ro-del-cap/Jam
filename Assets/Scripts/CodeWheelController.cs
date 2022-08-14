@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CodeWheelController : MonoBehaviour
 {
     public Image topPart;
-    public List<Image> downPartImages = new List<Image>();
+    //public List<Image> downPartImages = new List<Image>();
     public float gradesToRotate = 13.8f;
 
     private void Start()
