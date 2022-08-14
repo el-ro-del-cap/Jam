@@ -829,7 +829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1960045381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1473,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5120727545634284671, guid: ef8bf324f20e8ab43b3656b0902e8cf5, type: 3}
+      propertyPath: puzzleManager
+      value: 
+      objectReference: {fileID: 4827191092470927459}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8bf324f20e8ab43b3656b0902e8cf5, type: 3}
 --- !u!1001 &5701285480481241809
