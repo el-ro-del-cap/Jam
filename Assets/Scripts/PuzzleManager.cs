@@ -32,15 +32,7 @@ public class PuzzleManager : MonoBehaviour
             {
                 codeWheel.downPartImages[1].enabled = true;
             }
-        }      
-        /*
-        if (GameObject.Find("PuzzleEj (2)").GetComponent<Puzzle>().isSolved)
-        {
-            codeWheel.downPartImages[2].enabled = true;
         }
-        if (GameObject.Find("PuzzleEj (3)").GetComponent<Puzzle>().isSolved)
-        {
-            codeWheel.downPartImages[3].enabled = true;
-        }*/
+        
     }
 }

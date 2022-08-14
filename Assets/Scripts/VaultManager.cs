@@ -10,6 +10,7 @@ public class VaultManager : MonoBehaviour
     public GameObject currentButton;
     public bool isSolved = false;
     public Sprite openVault;
+    public GameObject lightBlub;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +49,7 @@ public class VaultManager : MonoBehaviour
     {
         Debug.Log("Hemos presionado " + currentVaultButtons.Count + " botones.");
         Debug.Log("Hay que precionar " + correctVaultButtons.Count + " botones.");
-        if (currentVaultButtons.Count == correctVaultButtons.Count)
+        if (currentVaultButtons.Count == correctVaultButtons.Count && currentVaultButtons.Count != 0)
         {
             for (int i = 0; i <= currentVaultButtons.Count && i <= correctVaultButtons.Count; i++)
             {
@@ -74,5 +75,12 @@ public class VaultManager : MonoBehaviour
     {
         DisableButtons();
         GetComponent<Image>().sprite = openVault;
+        lightBlub.SetActive(true);
+    }
+
+    public void TakeLightBulb()
+    {
+
+        Destroy(lightBlub);
     }
 }
