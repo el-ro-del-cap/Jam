@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ClockPuzzleManager : MonoBehaviour
 {
+    public PuzzleManager puzzleManager;
     public GameObject redClockwiseGrades, blackClockwiseGrades;
     public float redGradesToWin, blackGradesToWin;
     private AudioSource audioSource;
@@ -47,6 +48,7 @@ public class ClockPuzzleManager : MonoBehaviour
         {
             audioSource.clip = catSound;
             audioSource.Play();
+            puzzleManager.clockSolved = true;
         }
         else
         {

@@ -9,7 +9,7 @@ public class VaultManager : MonoBehaviour
     public List<GameObject> correctVaultButtons = new List<GameObject>();
     public GameObject currentButton;
     public bool isSolved = false;
-    public Sprite openVault;
+    public Sprite openVault, msjVault;
     public GameObject lightBlub;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class VaultManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSolved)
+       /* if (isSolved)
         {
             OpenVault();
-        }
+        }*/
     }
 
     public void AddButtonToList(GameObject button)
@@ -51,7 +51,7 @@ public class VaultManager : MonoBehaviour
         Debug.Log("Hay que precionar " + correctVaultButtons.Count + " botones.");
         if (currentVaultButtons.Count == correctVaultButtons.Count && currentVaultButtons.Count != 0)
         {
-            for (int i = 0; i <= currentVaultButtons.Count && i <= correctVaultButtons.Count; i++)
+            for (int i = 0; i < correctVaultButtons.Count; i++)
             {
                 if (currentVaultButtons[i] != correctVaultButtons[i])
                 {
@@ -59,8 +59,10 @@ public class VaultManager : MonoBehaviour
                 }
                 else { isSolved = true; }
             }
+
         }
         else { ClearButtons(); }
+
     }
     public void ClearButtons()
     {
@@ -70,6 +72,11 @@ public class VaultManager : MonoBehaviour
    public void  TryOpenVault()
     {
         CompraeButtons();
+        Debug.Log("Intento abrir "+ isSolved);
+        if (isSolved)
+        {
+            OpenVault();
+        }
     }
     public void OpenVault()
     {
@@ -78,10 +85,5 @@ public class VaultManager : MonoBehaviour
         lightBlub.SetActive(true);
     }
 
-    public void TakeLightBulb()
-    {
 
-        Destroy(lightBlub);
-        GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>().hasLightBlob = true;
-    }
 }

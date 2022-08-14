@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3009570641341477339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 732.89734, y: 262.341, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeWheel: {fileID: 7546101328750804204, guid: 9155f32ba5da6fd45afdfb7379962cf8, type: 3}
+  hasLightBlob: 0
+  hasDecoder: 0
 --- !u!114 &3009570641341477342
 MonoBehaviour:
   m_ObjectHideFlags: 0
