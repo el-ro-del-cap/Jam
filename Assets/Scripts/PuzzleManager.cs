@@ -5,6 +5,7 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     public CodeWheelController codeWheel;
+    public bool hasLightBlob = false, hasDecoder = false;
     // Start is called before the first frame update
     void Start()
     {

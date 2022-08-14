@@ -82,5 +82,6 @@ public class VaultManager : MonoBehaviour
     {
 
         Destroy(lightBlub);
+        GameObject.Find("PuzzleManager").GetComponent<PuzzleManager>().hasLightBlob = true;
     }
 }
