@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 386f1a1f4ee5abb46ac87a8fd01ac7ee
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ohio Signature Demo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 342afc4ca1961ef4f8e109909f46ef8b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

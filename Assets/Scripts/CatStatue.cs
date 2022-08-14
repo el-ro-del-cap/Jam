@@ -24,6 +24,7 @@ public class CatStatue : MonoBehaviour
         if (puzzleManager.clockSolved)
         {
             GetComponent<Image>().sprite = flipCatSprite;
+            puzzleManager.EnableCodeWheel();
         }
         
     }

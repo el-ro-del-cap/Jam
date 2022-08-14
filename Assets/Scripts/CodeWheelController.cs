@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CodeWheelController : MonoBehaviour
 {
     public Image topPart;
+    public Image botPart;
     //public List<Image> downPartImages = new List<Image>();
     public float gradesToRotate = 13.8f;
 
@@ -25,6 +26,16 @@ public class CodeWheelController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             topPart.GetComponent<RectTransform>().Rotate(
+                new Vector3(0, 0, -1 * gradesToRotate * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            botPart.GetComponent<RectTransform>().Rotate(
+                new Vector3(0, 0, 1 * gradesToRotate * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.C))
+        {
+            botPart.GetComponent<RectTransform>().Rotate(
                 new Vector3(0, 0, -1 * gradesToRotate * Time.deltaTime));
         }
     }
