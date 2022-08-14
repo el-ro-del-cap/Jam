@@ -7,27 +7,33 @@ public class ClockPuzzleManager : MonoBehaviour
 {
     public GameObject redClockwiseGrades, blackClockwiseGrades;
     public float redGradesToWin, blackGradesToWin;
-
-
-        
-    public bool isSolved = false;
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    public AudioClip[] shoot;
+    private AudioClip shootClip;
     void Start()
     {
-        
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            int index = Random.Range(0, shoot.Length);
+            shootClip = shoot[index];
+            audioSource.clip = shootClip;
+            audioSource.Play();
+        }
 
         if (redClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == redGradesToWin &&
-            blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
+           blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
         {
             isSolved = true;
-        }             
+            audioSource.Play();
+        }
     }
+
+    public bool isSolved = false;
+    // Update is called once per frame.
     public void DebugGrades()
     {
         Debug.Log("red grades = " + redClockwiseGrades.GetComponent<ClockWise>().gradesToEnd);

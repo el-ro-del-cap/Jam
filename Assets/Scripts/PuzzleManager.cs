@@ -19,7 +19,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void PuzzleSolved()
     {
-       // if (GameObject.Find("VaultPuzzle")) 
+        if (GameObject.Find("VaultPuzzle")) 
         {
             if (GameObject.Find("VaultPuzzle").GetComponent<VaultManager>().isSolved)
             {

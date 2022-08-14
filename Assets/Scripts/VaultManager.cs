@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class VaultManager : MonoBehaviour
 {
@@ -42,8 +41,18 @@ public class VaultManager : MonoBehaviour
             }
             if (isSolved)
             {
-                gameObject.SetActive(false);
+                gameObject.GetComponentsInChildren<Button>();
+                //gameObject.SetActive(false);
             }
         }
     }
+   /* public void DisableButtons()
+    {
+        List<Button> buttons = new List<Button>();
+        foreach(Button button in buttons)
+        {
+            button = GetComponentsInChildren
+        }
+        
+    }*/
 }
