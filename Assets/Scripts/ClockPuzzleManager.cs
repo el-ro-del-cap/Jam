@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class ClockPuzzleManager : MonoBehaviour
 {
+    public PuzzleManager puzzleManager;
     public GameObject redClockwiseGrades, blackClockwiseGrades;
     public float redGradesToWin, blackGradesToWin;
     private AudioSource audioSource;
     public AudioClip[] shoot;
     private AudioClip shootClip;
     public AudioClip catSound;
+    public bool isSolved = false;
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -29,11 +31,11 @@ public class ClockPuzzleManager : MonoBehaviour
            blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
         {
             isSolved = true;
-            
+            puzzleManager.clockSolved = true;
+
         }
     }
 
-    public bool isSolved = false;
     // Update is called once per frame.
     public void DebugGrades()
     {
@@ -47,6 +49,7 @@ public class ClockPuzzleManager : MonoBehaviour
         {
             audioSource.clip = catSound;
             audioSource.Play();
+            //puzzleManager.clockSolved = true;
         }
         else
         {
