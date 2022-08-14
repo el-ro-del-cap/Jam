@@ -10,6 +10,7 @@ public class ClockPuzzleManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip[] shoot;
     private AudioClip shootClip;
+    public AudioClip catSound;
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -28,7 +29,7 @@ public class ClockPuzzleManager : MonoBehaviour
            blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
         {
             isSolved = true;
-            audioSource.Play();
+            //audioSource.Play();
         }
     }
 
@@ -38,5 +39,14 @@ public class ClockPuzzleManager : MonoBehaviour
     {
         Debug.Log("red grades = " + redClockwiseGrades.GetComponent<ClockWise>().gradesToEnd);
         Debug.Log("Black grades = " + blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd);
+    }
+
+    public void PlayCatSound()
+    {
+        if (isSolved)
+        {
+            audioSource.clip = catSound;
+            audioSource.Play();
+        }
     }
 }
