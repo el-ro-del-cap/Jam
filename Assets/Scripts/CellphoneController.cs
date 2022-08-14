@@ -22,8 +22,7 @@ public class CellphoneController : MonoBehaviour
     public void TurnOnCellphone()
     {
        cellPhone.GetComponent<Image>().sprite = onImage;
-        //Play music.
-        Invoke("TurnOffCellphone", 1.0f);
+        Invoke("TurnOffCellphone", 6.2f);
     }
     public void TurnOffCellphone()
     {

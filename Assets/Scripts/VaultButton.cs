@@ -15,7 +15,6 @@ public class VaultButton : MonoBehaviour
 
     public void SelectButton()
     {
-        vaultManager.AddButtonToList(this.gameObject);
-        
+        vaultManager.AddButtonToList(this.gameObject);        
     }
 }

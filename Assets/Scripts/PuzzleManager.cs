@@ -26,11 +26,13 @@ public class PuzzleManager : MonoBehaviour
                 codeWheel.downPartImages[0].enabled = true;
             }
         }
-
-        if (GameObject.Find("ClockPuzzle").GetComponent<ClockPuzzleManager>().isSolved)
+        if (GameObject.Find("ClockPuzzle"))
         {
-            codeWheel.downPartImages[1].enabled = true;
-        }
+            if (GameObject.Find("ClockPuzzle").GetComponent<ClockPuzzleManager>().isSolved)
+            {
+                codeWheel.downPartImages[1].enabled = true;
+            }
+        }      
         /*
         if (GameObject.Find("PuzzleEj (2)").GetComponent<Puzzle>().isSolved)
         {
