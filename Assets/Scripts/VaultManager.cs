@@ -18,7 +18,10 @@ public class VaultManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isSolved)
+        {
+            DisableButtons();
+        }
     }
 
     public void AddButtonToList(GameObject button)
@@ -28,31 +31,42 @@ public class VaultManager : MonoBehaviour
         {
             currentVaultButtons.Add(currentButton);
             Debug.Log("Se agrego el boton " + currentButton.gameObject.name);
-        }
-        if(currentVaultButtons.Count >= correctVaultButtons.Count)
-        {
-            for(int i = 0; i <= correctVaultButtons.Count; i++)
-            {
-                if(currentVaultButtons[i] != correctVaultButtons[i])
-                {
-                    currentVaultButtons = new List<GameObject>();
-                }
-                else { isSolved = true; }                
-            }
-            if (isSolved)
-            {
-                gameObject.GetComponentsInChildren<Button>();
-                //gameObject.SetActive(false);
-            }
-        }
+        }       
     }
-   /* public void DisableButtons()
-    {
-        List<Button> buttons = new List<Button>();
-        foreach(Button button in buttons)
+
+     public void DisableButtons()
+     {
+        Button[] vaultButtons = GetComponentsInChildren<Button>();
+        foreach (Button vaultButton in vaultButtons)
         {
-            button = GetComponentsInChildren
+          vaultButton.gameObject.SetActive(false);
+        }     
+     }
+
+    public void CompraeButtons()
+    {
+        Debug.Log("Hemos presionado " + currentVaultButtons.Count + " botones.");
+        Debug.Log("Hay que precionar " + correctVaultButtons.Count + " botones.");
+        if (currentVaultButtons.Count == correctVaultButtons.Count)
+        {
+            for (int i = 0; i <= currentVaultButtons.Count && i <= correctVaultButtons.Count; i++)
+            {
+                if (currentVaultButtons[i] != correctVaultButtons[i])
+                {
+                    isSolved = false;
+                }
+                else { isSolved = true; }
+            }
         }
-        
-    }*/
+        else { ClearButtons(); }
+    }
+    public void ClearButtons()
+    {
+        currentVaultButtons = new List<GameObject>();
+    }
+
+   public void  TryOpenVault()
+    {
+        CompraeButtons();
+    }
 }
