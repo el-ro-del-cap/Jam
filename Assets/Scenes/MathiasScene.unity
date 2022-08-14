@@ -179,9 +179,12 @@ MonoBehaviour:
   redGradesToWin: 270
   blackGradesToWin: 60
   shoot:
-  - {fileID: 8300000, guid: 65145216081b85a4fab4b265026748fb, type: 3}
-  - {fileID: 8300000, guid: 3005581ba7730e94b84e84700a179915, type: 3}
-  - {fileID: 8300000, guid: 1c893dca898aa6c4594e3e3a0302fd72, type: 3}
+  - {fileID: 8300000, guid: dadb0d6c1623e704d8aff75139e1dbed, type: 3}
+  - {fileID: 8300000, guid: 804987169b5bf324581090561aae6ce7, type: 3}
+  - {fileID: 8300000, guid: 995b31429c131a442a7ebb263eeb3139, type: 3}
+  - {fileID: 8300000, guid: 31640d7178d865448a2116c2cf6533c0, type: 3}
+  - {fileID: 8300000, guid: 59366b9daa83f0349a8454581fb5a53f, type: 3}
+  - {fileID: 8300000, guid: ad2e96ea5ec08a942b521189907e441e, type: 3}
   catSound: {fileID: 8300000, guid: 3b29ee5bc7a8f5e409f20b4ac8cd54fd, type: 3}
   isSolved: 0
 --- !u!82 &328217807
@@ -195,7 +198,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

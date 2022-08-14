@@ -29,7 +29,7 @@ public class ClockPuzzleManager : MonoBehaviour
            blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
         {
             isSolved = true;
-            //audioSource.Play();
+            
         }
     }
 
@@ -46,6 +46,13 @@ public class ClockPuzzleManager : MonoBehaviour
         if (isSolved)
         {
             audioSource.clip = catSound;
+            audioSource.Play();
+        }
+        else
+        {
+            int index = Random.Range(0, shoot.Length);
+            shootClip = shoot[index];
+            audioSource.clip = shootClip;
             audioSource.Play();
         }
     }
