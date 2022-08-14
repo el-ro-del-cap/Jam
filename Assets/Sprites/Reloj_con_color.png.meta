@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69f3269af1d98c34d9576f7985345118
+guid: 80e6cca6412f2ed44b1495c3a56838a4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,85 +140,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reloj 1_0
+      name: Reloj_con_color_0
       rect:
         serializedVersion: 2
-        x: 271
-        y: 0
-        width: 877
-        height: 877
+        x: 268
+        y: 7
+        width: 883
+        height: 883
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf5b638aa71064499ce7e35420ef23d
-      internalID: -913003883
+      spriteID: eca6756786daa8940b4fcb241a6ecb93
+      internalID: 1692704543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj 1_1
-      rect:
-        serializedVersion: 2
-        x: 1227
-        y: 679
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7c56fd6f5a3477458df0c71d4134c5e
-      internalID: -1196507646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj 1_2
+      name: Reloj_con_color_1
       rect:
         serializedVersion: 2
         x: 1174
-        y: 318
+        y: 329
         width: 56
         height: 332
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d016a229c558f4b4e8ef048e9666fbbd
-      internalID: 326979610
+      spriteID: dae2f0dad0bc95746942b9addbc79bcd
+      internalID: -24998713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj 1_3
+      name: Reloj_con_color_2
       rect:
         serializedVersion: 2
         x: 1300
-        y: 156
+        y: 167
         width: 48
         height: 494
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c8553430e063fc4bbdc99f8ae1bf897
-      internalID: 253575391
+      spriteID: 7dadd1cc8bac07a4ebf176da2201ca71
+      internalID: -1010172073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reloj_con_color_3
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 226
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740fe509d1fb2154db50f69e8293bcd9
+      internalID: 509589247
       vertices: []
       indices: 
       edges: []
@@ -234,10 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reloj 1_1: -1196507646
-      Reloj 1_2: 326979610
-      Reloj 1_0: -913003883
-      Reloj 1_3: 253575391
+      Reloj_con_color_0: 1692704543
+      Reloj_con_color_3: 509589247
+      Reloj_con_color_1: -24998713
+      Reloj_con_color_2: -1010172073
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

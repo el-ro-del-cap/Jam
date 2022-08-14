@@ -9,6 +9,7 @@ public class VaultManager : MonoBehaviour
     public List<GameObject> correctVaultButtons = new List<GameObject>();
     public GameObject currentButton;
     public bool isSolved = false;
+    public Sprite openVault;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class VaultManager : MonoBehaviour
     {
         if (isSolved)
         {
-            DisableButtons();
+            OpenVault();
         }
     }
 
@@ -68,5 +69,10 @@ public class VaultManager : MonoBehaviour
    public void  TryOpenVault()
     {
         CompraeButtons();
+    }
+    public void OpenVault()
+    {
+        DisableButtons();
+        GetComponent<Image>().sprite = openVault;
     }
 }
