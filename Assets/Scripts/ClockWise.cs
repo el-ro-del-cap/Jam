@@ -19,7 +19,6 @@ public class ClockWise : MonoBehaviour
         gradesToEnd += gradesToRotate;
         myGrades.Rotate(new Vector3(0, 0, -gradesToRotate));       
         CorrectGrades();
-        GameObject.Find("ClockPuzzle").GetComponent<ClockPuzzleManager>().DebugGrades();
     }
 
     void CorrectGrades()

@@ -37,11 +37,11 @@ public class ClockPuzzleManager : MonoBehaviour
     }
 
     // Update is called once per frame.
-    public void DebugGrades()
+   /* public void DebugGrades()
     {
         Debug.Log("red grades = " + redClockwiseGrades.GetComponent<ClockWise>().gradesToEnd);
         Debug.Log("Black grades = " + blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd);
-    }
+    }*/
 
     public void PlayCatSound()
     {
