@@ -32,14 +32,13 @@ public class VaultManager : MonoBehaviour
         }
         if(currentVaultButtons.Count >= correctVaultButtons.Count)
         {
-            for(int i = 0; i < correctVaultButtons.Count; i++)
+            for(int i = 0; i <= correctVaultButtons.Count; i++)
             {
                 if(currentVaultButtons[i] != correctVaultButtons[i])
                 {
                     currentVaultButtons = new List<GameObject>();
-                    return;
                 }
-                isSolved = true;
+                else { isSolved = true; }                
             }
             if (isSolved)
             {
