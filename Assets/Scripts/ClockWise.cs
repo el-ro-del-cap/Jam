@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ClockWise : MonoBehaviour
 {
-   // ClockPuzzleManager clockManager;
+    public ClockPuzzleManager clockManager;
     public float gradesToRotate;
     public float gradesToEnd = 0;
     public RectTransform myGrades;
@@ -18,14 +18,15 @@ public class ClockWise : MonoBehaviour
     {
         gradesToEnd += gradesToRotate;
         myGrades.Rotate(new Vector3(0, 0, -gradesToRotate));       
-        CorrectGrades();
+        //CorrectGrades();
+        clockManager.ClockCheck();
     }
 
-    void CorrectGrades()
-    {
-        if(gradesToEnd >= 360)
-        {
-            gradesToEnd = 0;
-        }      
-    }
+    //void CorrectGrades()
+    //{
+    //    if(gradesToEnd >= 360)
+    //    {
+    //        gradesToEnd = 0;
+    //    }      
+    //}
 }

@@ -15,12 +15,13 @@ public class InteractableScript : MonoBehaviour
     {
         BotonesNav = FindObjectsOfType<NavButtonLeft>();
     }
+    private void Start()
+    {
+  
+    }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void TextChange()
     {
         tecstObjeto.text = TextoDesc;
@@ -45,5 +46,19 @@ public class InteractableScript : MonoBehaviour
             BotonesNav[i].gameObject.SetActive(true);
         }
         Panel.SetActive(false);
+    }
+    public void AreYouSure()
+    {
+        tecstObjeto.rectTransform.localPosition = new Vector3(0, 0, 0);
+        tecstObjeto.rectTransform.localScale = new Vector3(5, 5);
+        tecstObjeto.color = Color.red;
+        tecstObjeto.text = TextoDesc;
+    }
+    public void NotSoSure()
+    {
+        tecstObjeto.rectTransform.localPosition = new Vector3 (0, 400);
+        tecstObjeto.rectTransform.localScale = new Vector3(1, 1);
+        tecstObjeto.color = Color.white;
+        tecstObjeto.text = "";
     }
 }

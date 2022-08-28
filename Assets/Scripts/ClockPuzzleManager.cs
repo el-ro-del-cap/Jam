@@ -6,36 +6,17 @@ using UnityEngine.UI;
 public class ClockPuzzleManager : MonoBehaviour
 {
     public PuzzleManager puzzleManager;
-    public GameObject redClockwiseGrades, blackClockwiseGrades;
+    public RectTransform redClockwiseGrades, blackClockwiseGrades;
     public float redGradesToWin, blackGradesToWin;
     private AudioSource audioSource;
     public AudioClip[] shoot;
-    private AudioClip shootClip;
     public AudioClip catSound;
     public bool isSolved = false;
+    
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            int index = Random.Range(0, shoot.Length);
-            shootClip = shoot[index];
-            audioSource.clip = shootClip;
-            audioSource.Play();
-        }
-
-        if (redClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == redGradesToWin &&
-           blackClockwiseGrades.GetComponent<ClockWise>().gradesToEnd == blackGradesToWin)
-        {
-            isSolved = true;
-            puzzleManager.clockSolved = true;
-
-        }
-    }
-
     // Update is called once per frame.
    /* public void DebugGrades()
     {
@@ -45,17 +26,33 @@ public class ClockPuzzleManager : MonoBehaviour
 
     public void PlayCatSound()
     {
-        if (isSolved)
-        {
             audioSource.clip = catSound;
-            audioSource.Play();
-            //puzzleManager.clockSolved = true;
+            audioSource.Play();   
+    }
+
+    public void ClockCheck()
+    {
+        if (isSolved == false){
+            int redRound = Mathf.FloorToInt(redClockwiseGrades.eulerAngles.z); //*100)/10)*10;
+            int blackRound = Mathf.FloorToInt(blackClockwiseGrades.eulerAngles.z); //*100)/10)*10;
+            if (redRound == redGradesToWin && blackRound == blackGradesToWin)
+            {
+
+                PlayCatSound();
+                isSolved = true;
+                puzzleManager.clockSolved = true;
+            }
+            else
+            {
+                int index = Random.Range(0, shoot.Length);
+                audioSource.clip = shoot[index];
+                audioSource.Play();
+            }
         }
         else
         {
             int index = Random.Range(0, shoot.Length);
-            shootClip = shoot[index];
-            audioSource.clip = shootClip;
+            audioSource.clip = shoot[index];
             audioSource.Play();
         }
     }

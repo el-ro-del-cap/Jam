@@ -135,10 +135,4 @@ public class NavButtonLeft : MonoBehaviour
         Debug.Log("Next Panel Left: " + nextPanelLeft);
         Debug.Log("Next Panel Right: " + nextPanelRight);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -8,20 +8,17 @@ public class PuzzleManager : MonoBehaviour
     public GameObject wheelBtn;
     public GameObject endBtn;
     public bool hasLightBlob = false, hasDecoder = false, clockSolved = false;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKey(KeyCode.Delete))
-        {
-            EnableCodeWheel();
-            gameObject.GetComponent<AudioSource>().Play();
-        }
+    {   
+        //saul goodman
+        //if (Input.GetKey(KeyCode.Delete))
+        //{
+        //    EnableCodeWheel();
+        //    gameObject.GetComponent<AudioSource>().Play();
+        //}
     }
 
     public void EnableCodeWheel()

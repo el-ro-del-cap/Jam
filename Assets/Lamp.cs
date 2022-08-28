@@ -10,6 +10,7 @@ public class Lamp : MonoBehaviour
     public GameObject Aparicion;
     private AudioSource Sonoro;
     public GameObject LampObject;
+    public GameObject LampZoom;
     public Sprite LampOn;
     public Sprite LampOff;
     // Start is called before the first frame update
@@ -17,12 +18,6 @@ public class Lamp : MonoBehaviour
     {
         Sonoro = gameObject.GetComponent<AudioSource>();
         adminPuz = FindObjectOfType<PuzzleManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void EventoMistico()
@@ -33,12 +28,14 @@ public class Lamp : MonoBehaviour
                 if (Aparicion.activeInHierarchy == true)
                 {
                     Aparicion.SetActive(false);
-                    LampObject.GetComponent<Image>().sprite = LampOn;
+                    LampObject.GetComponent<Image>().sprite = LampOff;
+                    LampZoom.GetComponent<Image>().sprite = LampOff;
                 }
                 else
                 {
                     Aparicion.SetActive(true);
-                    LampObject.GetComponent<Image>().sprite = LampOff;
+                    LampObject.GetComponent<Image>().sprite = LampOn;
+                    LampZoom.GetComponent<Image>().sprite = LampOn;
                 }
                 Sonoro.Play();
                 break;

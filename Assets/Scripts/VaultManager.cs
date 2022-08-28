@@ -5,26 +5,40 @@ using UnityEngine.UI;
 
 public class VaultManager : MonoBehaviour
 {
+    public GameObject parentPanel;
     public List<GameObject> currentVaultButtons = new List<GameObject>();
     public List<GameObject> correctVaultButtons = new List<GameObject>();
+    public Button[] allButtons;
     public GameObject currentButton;
     public bool isSolved = false;
     public Sprite openVault, msjVault;
     public GameObject lightBlub;
+    public string vaultCode;
+    public string inputCode;
+    public AudioClip audioWrong;
+    public AudioClip audioCorrect;
+    public AudioClip oof;
+    public AudioClip openDoor;
+    private AudioSource result;
     // Start is called before the first frame update
     void Start()
     {
-        
+        UnfreezeButtons();
+        allButtons = GetComponentsInChildren<Button>();
+        result = gameObject.GetComponent<AudioSource>();
+        Debug.Log("Vault Panel Parent: " + parentPanel.name);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-       /* if (isSolved)
+        if (isSolved == false)
         {
-            OpenVault();
-        }*/
+            UnfreezeButtons();
+            inputCode = "";
+        }
     }
+
+
 
     public void AddButtonToList(GameObject button)
     {
@@ -36,33 +50,70 @@ public class VaultManager : MonoBehaviour
         }       
     }
 
-     public void DisableButtons()
+     public void DeactivateButtons()
      {
-        Button[] vaultButtons = GetComponentsInChildren<Button>();
-        foreach (Button vaultButton in vaultButtons)
+        foreach (Button vaultBtn in allButtons)
         {
-          vaultButton.gameObject.SetActive(false);
+          vaultBtn.gameObject.SetActive(false);
         }     
      }
 
-    public void CompraeButtons()
+    public void FreezeButtons()
     {
-        Debug.Log("Hemos presionado " + currentVaultButtons.Count + " botones.");
-        Debug.Log("Hay que precionar " + correctVaultButtons.Count + " botones.");
-        if (currentVaultButtons.Count == correctVaultButtons.Count && currentVaultButtons.Count != 0)
+        foreach (Button vaultBtn in allButtons)
         {
-            for (int i = 0; i < correctVaultButtons.Count; i++)
-            {
-                if (currentVaultButtons[i] != correctVaultButtons[i])
-                {
-                    isSolved = false;
-                }
-                else { isSolved = true; }
-            }
-
+            vaultBtn.GetComponent<Button>().enabled = false;
         }
-        else { ClearButtons(); }
+    }
 
+    public void UnfreezeButtons()
+    {
+        foreach (Button vaultBtn in allButtons)
+        {
+            vaultBtn.GetComponent<Button>().enabled = true;
+        }
+    }
+
+    public IEnumerator CompraeButtons()
+    {
+        //Debug.Log("Comparando");
+        if (inputCode.Length == vaultCode.Length)
+        {
+            if (inputCode == vaultCode)
+            {
+                FreezeButtons();
+                isSolved = true;
+                result.clip = audioCorrect;
+                result.Play();
+                yield return new WaitForSeconds(audioCorrect.length);
+                UnfreezeButtons();
+            }
+            else
+            {
+                FreezeButtons();
+                inputCode = "";
+                result.clip = audioWrong;
+                result.Play();
+                yield return new WaitForSeconds(3);
+                UnfreezeButtons();
+            }
+                
+        }
+        //Debug.Log("Hemos presionado " + currentVaultButtons.Count + " botones.");
+        //Debug.Log("Hay que presionar " + correctVaultButtons.Count + " botones.");
+        //if (currentVaultButtons.Count == correctVaultButtons.Count && currentVaultButtons.Count != 0)
+        //{
+        //    for (int i = 0; i < correctVaultButtons.Count; i++)
+        //    {
+        //        if (currentVaultButtons[i] != correctVaultButtons[i])
+        //        {
+        //            isSolved = false;
+        //        }
+        //        else { isSolved = true; }
+        //    }
+
+        //}
+        //else { ClearButtons(); }
     }
     public void ClearButtons()
     {
@@ -71,18 +122,26 @@ public class VaultManager : MonoBehaviour
 
    public void  TryOpenVault()
     {
-        CompraeButtons();
-        Debug.Log("Intento abrir "+ isSolved);
+        StartCoroutine(OpenVault());       
+    }
+    public IEnumerator OpenVault()
+    {
         if (isSolved)
         {
-            OpenVault();
+            result.clip = openDoor;
+            result.Play();
+            DeactivateButtons();
+            GetComponent<Image>().sprite = openVault;
+            lightBlub.SetActive(true);
         }
-    }
-    public void OpenVault()
-    {
-        DisableButtons();
-        GetComponent<Image>().sprite = openVault;
-        lightBlub.SetActive(true);
+        else
+        {
+            result.clip = oof;
+            result.Play();
+            yield return new WaitForSeconds(oof.length);
+        }
+            
+
     }
 
 
